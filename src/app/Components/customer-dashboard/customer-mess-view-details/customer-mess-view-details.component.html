@@ -1,0 +1,84 @@
+<div class="container">
+  <mat-card class="mess-card">
+    <!-- Image Slider -->
+    <div class="image-container">
+      <div [id]="'carousel-' + messInfo?.userId" class="carousel slide" data-touch="false" data-interval="false">
+        <div class="carousel-inner">
+          <div class="carousel-item" *ngFor="let image of messInfo?.messImages || []; let i = index"
+            [class.active]="i === 0">
+            <img [src]="image || 'https://via.placeholder.com/320x250'" [alt]="messInfo?.messName">
+          </div>
+          <!-- Fallback if no images -->
+          <div class="carousel-item active" *ngIf="!messInfo.messImages?.length">
+            <img src="https://via.placeholder.com/320x250" [alt]="messInfo?.messName">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" [attr.data-target]="'#carousel-' + messInfo?.userId"
+          data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" [attr.data-target]="'#carousel-' + messInfo?.userId"
+          data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mess Information -->
+    <mat-card-content>
+      <h2 class="messname">{{ messInfo.messName }}</h2>
+      <div class="row">
+        <p class="address"><mat-icon class="location-icon">location_on</mat-icon> <b>Address</b></p>
+        <!-- <p class="status ml-5">
+          <mat-icon class="status-dot">circle</mat-icon>
+          <span [ngClass]="{'open': isOpen, 'closed': !isOpen}">
+            {{ messStatusText }}
+          </span>
+        </p> -->
+
+
+      </div>
+
+      <h5 class="addressObj mb-3">{{ messInfo.address.shopNumber }},{{ messInfo.address.area }}, {{
+        messInfo.address.city }},{{ messInfo.address.pincode }},{{ messInfo.address.landmark }}</h5>
+
+      <!-- Ratings -->
+
+      <div class="rating-section my-4">
+        <span class="rating-score mr-2">{{star}}</span>
+        <span class="mx-3">{{totalRatings}} Rating</span>
+      </div>
+
+      <!-- Contact & Actions -->
+      <div class="actions mb-4">
+        <button mat-button class="contact">
+          <mat-icon>call</mat-icon> {{ messInfo.contact.mobileNumber }}
+        </button>
+        <button mat-icon-button class="custom-share-button">
+          <mat-icon class="custom-share-icon">share</mat-icon>
+
+        </button>
+
+
+        <button mat-icon-button>
+          <mat-icon>bookmark_border</mat-icon>
+        </button>
+
+        <button class="btn btn-outline feedbackButton" [style.width]="buttonWidth"
+          (click)="openFeedback()">FeedBack</button>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="buttons mt-4">
+        <button mat-stroked-button color="primary">
+          <mat-icon>directions</mat-icon> Direction
+        </button>
+        <button mat-stroked-button color="accent">
+          Notify Mess Owner
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,94 @@
+<div class="dashboard-container mb-5">
+    <!-- Top Cards Row -->
+    <div class="dashboard-row">
+      <!-- Customer Reviews Section -->
+      <div class="card review-section">
+        <div class="card-header">
+          <h2 class="text-info">Customer Reviews</h2>
+          <i class="pi pi-comments header-icon"></i>
+        </div>
+        <div class="rating-overview">
+          <div class="stars" [innerHTML]="getStarRating(averageRating)"></div>
+          <div class="rating-value">{{ averageRating }}<span class="rating-out-of">/5</span></div>
+          <div class="global-ratings">{{ globalRatingsCount | number }} Ratings</div>
+        </div>
+  
+        <div class="rating-bars">
+          <div *ngFor="let rating of ratings" class="rating-bar">
+            <span class="star-count">{{rating.stars}} <i class="pi pi-star-fill"></i></span>
+            <div class="bar-container">
+              <div class="bar" [style.width.%]="rating.percentage"></div>
+            </div>
+            <span class="percentage">{{rating.percentage}}%</span>
+          </div>
+        </div>
+      
+      </div>
+  
+      <!-- Food Served Section -->
+      <div class="card food-section">
+        <div class="card-header">
+          <h2 class="text-info">Food Preferences</h2>
+          <i class="pi pi-apple header-icon"></i>
+        </div>
+        <div class="food-chart-container">
+            <p-chart type="doughnut" [data]="doughnutData" [options]="doughnutOptions"></p-chart>
+          <div class="food-legend my-3">
+            <div class="legend-item">
+              <span class="veg-dot"></span>
+              <span class="legend-label text-success">Veg</span>
+              <span class="legend-percentage ml-2">40%</span>
+            </div>
+            <div class="legend-item">
+              <span class="nonveg-dot"></span>
+              <span class="legend-label text-danger">Non-veg</span>
+              <span class="legend-percentage ml-2">60%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Total Customer Viewed -->
+      <div class="card food-section">
+        <div class="card-header">
+          <h3 class="text-info">Total Views</h3>
+          <i class="pi pi-eye header-icon"></i>
+        </div>
+        <div class="view-content">
+          <div class="view-count">
+            <h5 class="text-center">{{ viewCount }}</h5> 
+          </div>
+          <div class="view-graph mt-3">
+            <img src="https://static.vecteezy.com/system/resources/previews/024/700/403/large_2x/statistics-graph-moving-up-growth-monochrome-flat-element-bar-chart-increase-profit-success-editable-clip-art-black-white-icon-simple-thin-line-spot-illustration-for-web-graphic-design-vector.jpg" alt="View Count Graph" class="graph-image">
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  
+    <!-- Customer Visit Chart -->
+    <div class="card visit-chart-section">
+      <div class="chart-header">
+        <div>
+          <h2 class="text-info">Customer Visits</h2>
+        </div>
+        <div class="time-period-selector">
+          <p-button *ngFor="let period of timePeriods" 
+                   [label]="period" 
+                   [outlined]="selectedPeriod !== period"
+                   [class.active]="selectedPeriod === period"
+                   class="time-period-btn"
+                   (onClick)="changeTimePeriod(period)">
+          </p-button>
+        </div>
+      </div>
+  
+      <div class="chart-container">
+        <p-chart *ngIf="!isLoading" type="bar" [data]="chartData" [options]="chartOptions"></p-chart>
+        <div *ngIf="isLoading" class="loading-indicator">
+          <i class="pi pi-spinner pi-spin"></i>
+          <span>Loading chart data...</span>
+        </div>
+      </div>
+    </div>
+  </div>

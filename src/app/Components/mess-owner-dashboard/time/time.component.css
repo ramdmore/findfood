@@ -1,0 +1,52 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.mat-card {
+  border-radius: 12px;
+}
+
+.mat-card-title {
+  font-weight: bold;
+}
+
+.mat-form-field {
+  min-width: 100%;
+}
+
+.mat-radio-button {
+  margin-top: 8px;
+}
+
+/* snackbar */
+/* Success Snackbar */
+.success-toast {
+  background-color: #4CAF50 !important; /* Green for success */
+  color: white !important;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Error Snackbar */
+.error-toast {
+  background-color: #f44336 !important; /* Red for error */
+  color: white !important;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Ensure the action button (OK) is white */
+.mat-mdc-snack-bar-action {
+  color: white !important;
+}
+
+form{
+  width: 700px;
+}

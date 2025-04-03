@@ -1,0 +1,141 @@
+/* Global Styles */
+.sidenav-container {
+  height: 100vh;
+  background-color: #f4f7fc; /* Light blue-gray background */
+}
+
+/* Sidebar Styling */
+mat-sidenav {
+  width: 260px;
+  background: linear-gradient(to bottom, #ffffff, #e3ebf6); /* Soft light gradient */
+  color: #2c3e50; /* Dark text for contrast */
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  font-weight: bold;
+  background-color: #5dade2; /* Light sky blue */
+  color: white; /* White text for contrast */
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+/* Sidebar Menu Items */
+mat-nav-list a {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #34495e; /* Deep gray for readability */
+  font-size: 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Icon Styling */
+mat-nav-list a mat-icon {
+  margin-right: 12px;
+  color: #5dade2; /* Soft blue icon */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+mat-nav-list a:hover {
+  background-color: rgba(93, 173, 226, 0.15); /* Light blue hover */
+  color: #2980b9; /* Darker blue text */
+  transform: translateX(5px);
+}
+
+/* Active State: Change Background, Text & Icon Color */
+mat-nav-list a.active {
+  background-color: #5dade2; /* Light blue active */
+  color: white;
+  font-weight: bold;
+}
+
+mat-nav-list a.active mat-icon {
+  color: white !important; /* Change icon color to match text */
+}
+
+/* Toolbar Styling */
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Sidebar Toggle Button */
+.toggle-button {
+  background-color: #5dade2; /* Light blue button */
+  color: white;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #2980b9; /* Darker blue */
+  transform: scale(1.1);
+}
+
+/* Content Section */
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Card Styling */
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Styles */
+.button-primary {
+  background-color: #5dade2;
+  color: white;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-primary:hover {
+  background-color: #2980b9; /* Darker blue */
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  mat-sidenav {
+    width: 200px;
+  }
+
+  mat-nav-list a {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Main Container */
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

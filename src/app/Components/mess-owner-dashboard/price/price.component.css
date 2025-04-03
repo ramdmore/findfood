@@ -1,0 +1,68 @@
+.price-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .price-card {
+    width: 500px;
+    padding: 20px;
+    width: 700px;
+    /* border-radius: 12px; */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .price-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .section-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    display: block;
+    margin-bottom: 6px;
+  }
+  
+  .save-button-container {
+    text-align: right;
+    margin-top: 15px;
+  }
+  
+  .save-btn {
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+  
+  /* snackbar */
+  /* Success Snackbar */
+.success-toast {
+  background-color: #4CAF50 !important; /* Green for success */
+  color: white !important;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Error Snackbar */
+.error-toast {
+  background-color: #f44336 !important; /* Red for error */
+  color: white !important;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Ensure the action button (OK) is white */
+.mat-mdc-snack-bar-action {
+  color: white !important;
+}
+
+/*  */
+

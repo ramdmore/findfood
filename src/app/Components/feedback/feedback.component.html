@@ -1,0 +1,58 @@
+<div class="container myFeedBackContainer">
+
+  <div class="row">
+    <div class="col-sm-12 filterTitle">
+      <h4 class="text-center ml-4 text-secondary"><b>Feedback</b> </h4>
+      <!-- <mat-icon class="mr-4 mb-3" (click)="closeDialog()">close</mat-icon> -->
+    </div>
+    <hr><hr>
+    <div class="line"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <mat-card>
+        <div class="row second">
+          <div class="col-sm-12">
+            <h3 class="my-3">{{myMessName}}</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <p>How would you rate your experience ?</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <h5>Rating</h5>
+            <p>Click To Rate</p>
+            <span *ngFor="let s of starArray; let i = index">
+              <a><i class="fa fa-star mx-2"
+                  [ngClass]="{'fa-regular': i >=rating, 'fa-solid' : i < rating, 'text-warning' : i <rating,'text-info' : i >= rating}"
+                  (click)="onRating(i+1)"></i></a>
+            </span>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+    <div class="col-sm-6">
+      <mat-card>
+        <div class="row">
+          <div class="col-sm-12">
+            <p>Please ! Tell us about our food and
+              service.</p>
+            <mat-form-field>
+              <mat-label>Textarea</mat-label>
+              <textarea matInput [(ngModel)]="feedback"></textarea>
+            </mat-form-field>
+            <hr>
+            <div class="feedbackSubmitButton d-flex justify-content-end">
+              <button  mat-flat-button color="accent" (click)="onSubmitFeedback()">Submit FeedBack</button>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

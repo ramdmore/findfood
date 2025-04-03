@@ -1,0 +1,83 @@
+Getting mess data API:
+ In header add this for all API => withCredentials:true ,
+( for eg. this.http.get('your_API', {
+            withCredentials:true , }) )
+MessDetails=>
+https://findfood-ashen.vercel.app/api/user/messDetailsData
+method:"GET"
+
+MenuDetails=>
+https://findfood-ashen.vercel.app/api/user/menuDetailsData
+method:"GET"
+
+PriceDetails=>
+https://findfood-ashen.vercel.app/api/user/priceDetailsData
+method:"GET"
+
+TimeDetails=>
+https://findfood-ashen.vercel.app/api/user/timeDetailsData
+method:"GET"
+
+-----------------------------------------------------------------------------------------------------------------
+
+Update mess data APIs:
+
+MessDetails=>
+https://findfood-ashen.vercel.app/api/user/saveMessDetails
+method:"patch"
+payLoad: messDetails
+
+MenuDetails=>
+https://findfood-ashen.vercel.app/api/user/saveMenuDetails
+method:"patch"
+payLoad: menuDetails
+
+PriceDetails=>
+https://findfood-ashen.vercel.app/api/user/savePriceDetails
+method:"patch"
+payLoad: priceDetails
+
+TimeDetails=>
+https://findfood-ashen.vercel.app/api/user/saveTimeDetails
+method:"patch"
+payLoad: timeDetails
+
+---------------------------------------------------------------
+
+Customer side API:
+Api for adding views of customer
+https://findfood-ashen.vercel.app/api/user/addViews
+method : "POST"
+withCredentials:true
+Payload: {
+    messUserId: "messId"
+}
+
+MessOwnerSide APIs:
+API for getting views :
+https://findfood-ashen.vercel.app/api/user/getViews
+method:"GET"
+withCredentials:true
+
+API for getting rating data :
+https://findfood-ashen.vercel.app/api/user/getRatingData
+method:"GET"
+withCredentials:true
+
+API for getting views for Dashboard chart:
+https://findfood-ashen.vercel.app/api/user/views
+method:"POST"
+withCredentials:true
+payload:{
+    period:"daily" (daily,weekly,monthly,yearly any one period)
+}
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------
+
+
+
+ https://clipground.com/images/veg-logo-png-6.png

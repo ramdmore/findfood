@@ -1,0 +1,263 @@
+<div>
+  <form [formGroup]="detailForm" (submit)="saveMessDetails()">
+    <div formGroupName="messDetails">
+      <mat-card class="custom-card">
+        <mat-card-header class="custom-card-header">
+          <mat-card-title>Mess Name</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row">
+            <div class="col-12 mt-2">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Mess name</mat-label>
+                <input matInput formControlName="messName" />
+                <mat-error *ngIf="detailForm.get('messDetails.messName')?.invalid">
+                  Mess name is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="custom-card">
+        <mat-card-header class="custom-card-header">
+          <mat-card-title>
+            <mat-icon class="header-icon">location_on</mat-icon> Address
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div formGroupName="address">
+            <div class="row mt-3">
+              <div class="col-md-5 mr-4">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Shop number / Building number</mat-label>
+                  <input matInput formControlName="shopNumber" />
+                </mat-form-field>
+              </div>
+              <div class="col-md-5 ml-4">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Area / Locality</mat-label>
+                  <input matInput formControlName="area" />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 mr-4">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>City</mat-label>
+                  <input matInput formControlName="city" />
+                  <mat-error *ngIf="detailForm.get('messDetails.address.city')?.invalid">
+                    City is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-5 ml-4">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Pincode</mat-label>
+                  <input matInput formControlName="pincode" />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-11">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Add nearby landmark</mat-label>
+                  <input matInput formControlName="landmark" />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="custom-card">
+        <mat-card-header class="custom-card-header">
+          <mat-card-title>
+            <mat-icon class="header-icon">phone</mat-icon> Contact
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div formGroupName="contact">
+            <div class="row mt-4">
+              <div class="col-md-5 mr-4">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Mobile number</mat-label>
+                  <input matInput formControlName="mobileNumber" type="tel" />
+                  <mat-error *ngIf="detailForm.get('messDetails.contact.mobileNumber')?.invalid">
+                    Mobile number is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-5 ml-4">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Email ID</mat-label>
+                  <input matInput formControlName="email" type="email" />
+                  <mat-error *ngIf="detailForm.get('messDetails.contact.email')?.hasError('required')">
+                    Email is required
+                  </mat-error>
+                  <mat-error *ngIf="detailForm.get('messDetails.contact.email')?.hasError('email')">
+                    Enter a valid email
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="custom-card">
+        <mat-card-header class="custom-card-header">
+          <mat-card-title>
+            <mat-icon class="header-icon">verified</mat-icon> License
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div formGroupName="license">
+            <div class="row mt-4">
+              <div class="col-md-5 mr-4">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Food license number</mat-label>
+                  <input matInput formControlName="licenseNumber" />
+                  <mat-error *ngIf="detailForm.get('messDetails.license.licenseNumber')?.invalid">
+                    Food license number is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-5 ml-4">
+                <div class="file-upload-container rounded border p-2 w-100 text-center">
+                  <label for="licenseFileInput" class="file-upload-label">
+                    {{ licenseImagePreview ? "License Image Uploaded" : "Upload License Image" }}
+                  </label>
+                  <input 
+                    #licenseFileInput 
+                    id="licenseFileInput" 
+                    type="file" 
+                    (change)="onLicenseFileChange($event)"
+                    accept="image/*" 
+                    style="display: none" 
+                  />
+                </div>
+              
+                <!-- License Image Preview with Hover Close Button -->
+                <div *ngIf="licenseImagePreview" class="mt-2 text-center position-relative preview-container">
+                  <div class="image-preview">
+                    <img 
+                      [src]="licenseImagePreview" 
+                      alt="License Image Preview"
+                      class="license-image-preview img-fluid" 
+                    />
+                    <button 
+                      type="button" 
+                      class="close-btn"
+                      (click)="confirmLicenseDelete()">
+                      ✖
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              
+
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="custom-card">
+        <mat-card-header class="custom-card-header">
+          <mat-card-title>
+            <mat-icon class="header-icon">restaurant</mat-icon> Food You Serve
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row mt-4">
+            <div class="col-12">
+              <mat-radio-group formControlName="foodType" class="d-flex align-items-center gap-3">
+                <mat-radio-button value="veg" class="custom-radio" (click)="showToVegAndToVegNonVeg('Veg')">Veg</mat-radio-button>
+                <mat-radio-button value="vegOrNonVeg" class="custom-radio" (click)="showToVegAndToVegNonVeg('Veg Or Non-Veg')">Veg or Non-Veg</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="custom-card">
+        <mat-card-header class="custom-card-header">
+          <mat-card-title>
+            <mat-icon class="header-icon">image</mat-icon> Add Your Mess Images
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row mt-4">
+            <div class="col-sm-12 d-flex justify-content-space-between">
+              <div class="file-upload-container rounded border p-3 w-100 text-center">
+                <div>
+               
+                  <input 
+                    #fileInput 
+                    id="fileInput" 
+                    type="file" 
+                    (change)="onFileChange($event)" 
+                    multiple 
+                    accept="image/*"
+                    style="display: none" 
+                  />
+                </div>
+                <div>
+                  <button type="button" (click)="fileInput.click()" mat-flat-button color="primary">
+                    <mat-icon>add</mat-icon> Add Images
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image Preview Section -->
+          <div class="image-preview-container mt-3" *ngIf="imagePreviews.length > 0">
+            <h6>Image Previews</h6>
+            <div class="row">
+              <ng-container *ngFor="let preview of imagePreviews; let i = index">
+                <div class="col-md-3 col-sm-6 mb-3 d-flex justify-content-center">
+                  <div class="image-preview text-center position-relative">
+                    <img class="preview-img" [src]="preview" alt="Image Preview" />
+                    <button type="button" class="close-btn" (click)="confirmImageDelete(i)">✖</button>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          
+
+          <!-- Save Button -->
+          <div class="d-flex justify-content-end mt-3">
+            <button type="submit" mat-raised-button color="primary">Save</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </form>
+
+  <!-- Delete Image Dialog Template -->
+  <ng-template #deleteImageDialog>
+    <mat-dialog-content>
+      Are you sure you want to delete this image?
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-button color="warn" [mat-dialog-close]="true">Delete</button>
+    </mat-dialog-actions>
+  </ng-template>
+
+  <!-- Delete License Dialog Template -->
+  <ng-template #deleteLicenseDialog>
+    <mat-dialog-content>
+      Are you sure you want to delete the license image?
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-button color="warn" [mat-dialog-close]="true">Delete</button>
+    </mat-dialog-actions>
+  </ng-template>
+</div>

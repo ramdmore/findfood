@@ -1,0 +1,210 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.mess-card {
+  width: 900px;
+  padding: 30px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for better visibility */
+}
+
+.carousel-inner {
+  width: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 450px; /* Fixed height */
+  object-fit: cover; /* Ensures the image fills the space properly */
+  border-radius: 5px;
+}
+
+
+.image-slider img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.image-container {
+  width: 820px;
+  margin-bottom: 30px;
+  overflow: hidden; /* Prevent overflow issues */
+}
+
+.messname {
+  padding-top: 20px;
+  margin: 20px 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.address {
+  font-size: 24px;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.location-icon {
+  color: red;
+  margin-right: 7px;
+}
+
+.status {
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+  font-weight: bold;
+}
+
+.status-dot {
+  font-size: 10px;
+  margin-top: 17px;
+  /* margin-right: 2px; */
+}
+
+.addressObj{
+  margin-bottom: 40px;
+}
+
+.open {
+  color: green;
+}
+
+.closed {
+  color: red;
+}
+
+.rating-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 35px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-right: 8px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer; 
+}
+
+/* Hover effect */
+.rating-score:hover {
+  background-color: #f8d210;
+  color: #000;
+  border-color: #ffcc00;
+  transform: scale(1.1);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.location-icon {
+  color: #ff5733;
+}
+
+.rating-section {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 8px 0;
+}
+
+.rating-score {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.star-icon {
+  font-size: 24px;
+  color: #f8d210;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  cursor: pointer; 
+}
+
+/* Hover Effect */
+.star-icon:hover {
+  color: #ffcc00;
+  transform: scale(1.2);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.contact {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  /* padding: 5px 10px; */
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.buttons button {
+  border-radius: 2px !important; /* Small curved border */
+  border: 2px solid rgba(0, 0, 0, 0.2) !important; /* Soft border effect */
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttons button:hover {
+  border-color: rgba(0, 0, 0, 0.5); /* Darker border on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+}
+
+.buttons button mat-icon {
+  margin-right: 5px;
+}
+
+.feedbackButton {
+  border-radius: 25px;
+  padding: 12px 24px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+.feedbackButton:hover {
+  background-color: #ff9800; /* Orange */
+  color: black;
+  box-shadow: 0px 6px 15px rgba(255, 152, 0, 0.5);
+}
+
+.feedbackButton mat-icon {
+  margin-right: 8px;
+  font-size: 20px;
+}
+

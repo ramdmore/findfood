@@ -1,0 +1,35 @@
+<div class="feedback-container mb-5">
+  <h1 class="text-info my-4">Customer Feedback</h1>
+  <mat-card *ngFor="let feedback of myFeedBack" 
+            class="feedback-card"
+           >
+    
+    <mat-card-header>
+      <!-- Avatar with Food-Themed Icons -->
+      <div mat-card-avatar class="rating-avatar" [ngClass]="getRatingColor(feedback.rating)">
+        <span class="rating-number">{{ getRatingColor(feedback.rating).icon }}</span>
+      </div>
+      <mat-card-title class="rating-style">
+        <div class="star-rating ml-2">
+          <span *ngFor="let star of getStars(feedback.rating)" 
+                [class.filled]="star" 
+                [class.unfilled]="!star">
+            ★
+          </span>
+        </div>
+        <span class="rating-value ml-3 ">{{feedback.rating}}/5.0</span>
+      </mat-card-title>
+      <mat-card-subtitle class="my-3 text-info">
+        {{feedback.feedback}}
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p class="d-flex align-items-center p-style">
+        <i class="fa fa-user customerId"></i>
+        <strong>Customer ID: </strong> {{feedback.customerUserId}}
+      </p>
+      <p><strong>Date:</strong> {{feedback.updatedAt | date: 'MMM d, y'}}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

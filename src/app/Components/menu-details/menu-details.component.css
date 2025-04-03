@@ -1,0 +1,122 @@
+/* // Global container */
+.container-fluid {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+/* // Page title */
+.page-title {
+  text-align: center;
+  font-weight: bold;
+  color: #ff5722;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+/* // Menu card styling */
+.menu-card {
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease-in-out;
+  background-color: #fff;
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* // Menu header (icons & title) */
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.meal-icon {
+  font-size: 30px;
+  color: #ff9800;
+}
+
+.fav-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #757575;
+  &:hover {
+    color: red;
+  }
+}
+
+/* // Menu content (items & price) */
+.menu-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+/* // Menu list */
+.menu-list {
+  flex: 1;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.food-icon {
+  color: #ff5722;
+  margin-right: 5px;
+}
+
+/* // Price tag */
+.price-tag {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4caf50;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid #4caf50;
+  display: inline-block;
+}
+
+/* // Order button */
+.order-button {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.close-icon {
+  cursor: pointer;
+  font-size: 1.5rem; /* Adjust icon size */
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.close-icon:hover {
+  color: red; /* Change color on hover */
+  transform: scale(1.2); /* Slightly enlarge the icon */
+}
+
+/* // Responsive design */
+@media (max-width: 768px) {
+  .menu-card {
+    width: 100%;
+  }
+
+  .menu-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .price-tag {
+    margin-top: 10px;
+  }
+}

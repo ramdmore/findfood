@@ -1,0 +1,64 @@
+<div class="header-container">
+  <div class="back-button-container">
+    <button mat-raised-button color="primary" (click)="goToHome()">
+      <mat-icon>home</mat-icon> Back to Home
+    </button>
+  </div>
+</div>
+
+<div class="login-wrapper">
+  <mat-card class="login-card">
+    <h3 class="mt-2">Log In</h3>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email/Mobile number</mat-label>
+        <input matInput formControlName="email" type="text" #emailInput>
+        <mat-error *ngIf="loginForm.controls['email'].hasError('required')">
+          This field is required.
+        </mat-error>
+        <mat-error *ngIf="loginForm.controls['email'].hasError('email')">
+          Enter a valid email address.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password">
+        <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+          Password is required.
+        </mat-error>
+        <mat-error *ngIf="loginForm.controls['password'].hasError('minlength')">
+          Password must be at least 6 characters long.
+        </mat-error>
+      </mat-form-field>
+
+      <a class="forgot-password">Forgot password?</a>
+
+      <div class="captcha-box">
+        <span class="captcha-text">{{ captchaText }}</span>
+        <button type="button" mat-icon-button class="refresh-icon" (click)="generateCaptcha()">🔄</button>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Enter CAPTCHA</mat-label>
+        <input matInput formControlName="captcha" type="text">
+        <mat-error *ngIf="loginForm.controls['captcha'].hasError('required')">
+          Please enter the CAPTCHA.
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" class="full-width" [disabled]="loginForm.invalid">
+        Log In
+      </button>
+    </form>
+
+    <div class="separator"></div>
+
+    <button mat-stroked-button class="google-login">
+      <span class="google-logo"><i class="fa fa-google" aria-hidden="true"></i> </span> Continue with Google
+    </button>
+
+    <p class="register-text mt-2">Don’t have an account? <a routerLink="/register">Register now</a></p>
+  </mat-card>
+</div>

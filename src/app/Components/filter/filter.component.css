@@ -1,0 +1,74 @@
+mat-card {
+    padding: 20px;
+    min-width: 300px;
+  }
+  
+  .filter-container {
+    padding: 10px;
+  }
+ 
+  
+  .line {
+    border-bottom: 2px solid #110b0b;
+    margin-bottom: 10px;
+  }
+  
+  .filterTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  .filterTitle mat-icon {
+    cursor: pointer;
+  }
+  
+  .ratingButton {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .ratingButton button {
+    flex: 0 0 auto;
+  }
+  
+  .foodType-container {
+    padding: 16px;
+  }
+  
+  .foodTypeButton {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .foodTypeButton button {
+    flex: 0 0 auto;
+  }
+  
+  mat-dialog-actions {
+    padding: 16px;
+    margin-bottom: 0;
+  }
+  
+  .finalButton {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 16px;
+  }
+  
+  h5 {
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  hr {
+    margin: 10px 0;
+  }
+  
+  .btn {
+    min-width: 80px;
+  }

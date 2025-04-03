@@ -1,0 +1,259 @@
+/* customer-dashboard.component.scss */
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .dashboard-row {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .card {
+    flex: 1;
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+  
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  
+    h2,
+    h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: #2d3748;
+    }
+  
+    .header-icon {
+      color: #4c51bf;
+      font-size: 24px;
+    }
+  }
+  
+  /* Review Section */
+  .review-section {
+    .rating-overview {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 16px;
+      background: #f8f9fa;
+      border-radius: 8px;
+  
+      .stars {
+        font-size: 24px;
+        color: #fbbf24;
+        margin-bottom: 8px;
+        letter-spacing: 2px;
+      }
+  
+      .rating-value {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1a202c;
+        line-height: 1;
+  
+        .rating-out-of {
+          font-size: 16px;
+          color: #718096;
+        }
+      }
+  
+      .global-ratings {
+        color: #718096;
+        font-size: 14px;
+        margin-top: 4px;
+      }
+    }
+  
+    .rating-bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+  
+      .star-count {
+        width: 60px;
+        font-size: 14px;
+        color: #4a5568;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+  
+        i {
+          color: #fbbf24;
+          font-size: 12px;
+        }
+      }
+  
+      .bar-container {
+        flex-grow: 1;
+        height: 8px;
+        background: #edf2f7;
+        border-radius: 4px;
+        position: relative;
+        margin: 0 12px;
+  
+        .bar {
+          height: 100%;
+          border-radius: 4px;
+          background: linear-gradient(90deg, #48bb78, #38a169);
+        }
+      }
+  
+      .percentage {
+        width: 40px;
+        text-align: right;
+        font-size: 14px;
+        color: #4a5568;
+      }
+    }
+  
+    .view-all-btn {
+      width: 100%;
+      margin-top: 16px;
+      background: #4c51bf !important;
+      border: none !important;
+    }
+  }
+  
+  /* Food Served Section */
+  .food-legend {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .legend-item .legend-label {
+    font: 1.2em sans-serif;
+    font-weight: bold;
+  }
+  
+  /* View Section */
+  .viewed-section {
+    height: 200px;
+  }
+  
+  .view-count h5 {
+    font-size: 37px;
+    color: #ee9bec;
+  }
+  
+  .rating-overview .stars {
+    color: #FFD700;
+    /* Gold color for stars */
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .rating-overview .stars i {
+    margin: 0 2px;
+  }
+  
+  .rating-bar .bar-container {
+    width: 60%;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    height: 8px;
+  }
+  
+  .rating-bar .bar {
+    height: 100%;
+    background-color: #FFD700;
+    border-radius: 4px;
+  }
+  
+  /* Container for the period selector */
+  .time-period-selector {
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+    margin: 27px 0;
+  }
+  
+  /* Base button styles */
+  ::ng-deep .time-period-btn .p-button {
+    min-width: 80px;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+    border-radius: 4px !important;
+    font-weight: 500;
+  }
+  
+  /* Outlined (inactive) state */
+  ::ng-deep .time-period-btn .p-button.p-button-outlined {
+    background: transparent !important;
+    color: #64748b !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+  
+  /* Outlined hover state */
+  ::ng-deep .time-period-btn .p-button.p-button-outlined:hover {
+    background: #f8fafc !important;
+    color: #475569 !important;
+    border-color: #cbd5e1 !important;
+  }
+  
+  /* Active (selected) state */
+  ::ng-deep .time-period-btn .p-button:not(.p-button-outlined) {
+    background: #664b65 !important;
+    color: white !important;
+    border: 1px solid #e5c9e4 !important;
+  }
+  
+  /* Active hover state */
+  ::ng-deep .time-period-btn .p-button:not(.p-button-outlined):hover {
+    background: #e6e58d !important;
+    border-color: #2563eb !important;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .dashboard-row {
+      flex-direction: column;
+    }
+  
+    .food-chart-container {
+      flex-direction: column;
+      height: auto !important;
+      gap: 24px;
+    }
+  }
+
+
+  /*  */
+  .view-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .view-graph {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .graph-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

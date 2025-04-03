@@ -1,0 +1,99 @@
+/* Feedback Container */
+.feedback-container {
+  padding: 20px;
+  width: 600px;
+  /* max-width: 900px; */
+  margin: 0 auto;
+}
+
+/* Feedback Card Styling */
+.feedback-card {
+  margin-bottom: 20px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.feedback-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Rating Avatar with Food-Themed Icons */
+.rating-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}
+
+
+.rating-style{
+  font-size: 30px;
+}
+.text-info{
+  font-size: 20px;
+}
+
+
+/* Customer ID Badge */
+.customerId {
+  width: 35px;
+  height: 35px;
+  background-color: #ff5722;
+  border-radius: 50%;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-right: 12px;
+}
+
+/* Star Rating Styling */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.star-rating span {
+  font-size: 22px;
+  margin: 0 1px;
+}
+
+.star-rating .filled {
+  color: #FFD700; /* Gold */
+}
+
+.star-rating .unfilled {
+  color: #e0e0e0; /* Light Gray */
+}
+
+/* Rating Value */
+.rating-value {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Feedback Text */
+mat-card-subtitle {
+  font-size: 18px;
+  font-style: italic;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Date Styling */
+mat-card-content p {
+  font-size: 14px;
+  color: #777;
+}

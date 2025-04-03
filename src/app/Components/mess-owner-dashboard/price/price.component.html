@@ -1,0 +1,55 @@
+<div class="price-container">
+  <mat-card class="price-card">
+    <mat-card-header>
+      <h2 class="mb-3">Price (&#8377;)</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="priceDetailsForm" (submit)="savePriceDetails()">
+        <div formGroupName="priceDetails">
+          <!-- Monthly Membership Charges -->
+          <label class="section-label">Monthly membership charges</label>
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput type="number" formControlName="monthlyCharges" />
+            <mat-error *ngIf="priceDetailsForm.get('priceDetails.monthlyCharges')?.invalid">
+              Monthly mess charges are required
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Single Time Meal Charges -->
+          <label class="section-label">Single time meal charges</label>
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput type="number" formControlName="singleDayCharges" />
+            <mat-error *ngIf="priceDetailsForm.get('priceDetails.singleDayCharges')?.hasError('required')">
+              Price is required
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Special Day Veg Charges -->
+          <label class="section-label">Special day veg charges</label>
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput type="number" formControlName="specialDayVegCharges" />
+            <mat-error *ngIf="priceDetailsForm.get('priceDetails.specialDayVegCharges')?.hasError('required')">
+              Price is required
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Special Day Non-Veg Charges -->
+          <div *ngIf="showNonVegCharges">
+            <label class="section-label">Special day non-veg charges</label>
+            <mat-form-field appearance="outline" class="w-100">
+              <input matInput type="number" formControlName="specialDaynonVegCharges" />
+              <mat-error *ngIf="priceDetailsForm.get('priceDetails.specialDaynonVegCharges')?.hasError('required')">
+                Non-veg price is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- Save Button -->
+        <div class="d-flex justify-content-end">
+          <button type="submit" mat-raised-button color="primary" [disabled]="priceDetailsForm.invalid">Save</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

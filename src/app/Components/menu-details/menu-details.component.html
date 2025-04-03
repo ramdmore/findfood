@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+      <h4 class="page-title ml-5">{{ currentDay }}</h4>
+      <span>
+        <i class="fa fa-times-circle-o fa-2x" aria-hidden="true" (click)="closeDialog()"></i>
+      </span>
+    </div>
+    <hr class="w-100">
+  </div>
+  
+
+  <div class="row justify-content-center">
+    <!-- Day Menu Card -->
+    <div class="col-md-6 col-12">
+      <mat-card class="menu-card">
+        <div class="menu-header">
+          <mat-icon class="meal-icon">light_mode</mat-icon>
+          <h5 class="menu-title">Day Menu</h5>
+        
+        </div>
+        <div class="menu-content">
+          <ul class="menu-list">
+            <li *ngFor="let morningMenu of myMorningMenuList">
+              <mat-icon class="food-icon">restaurant</mat-icon> {{ morningMenu }}
+            </li>
+          </ul>
+          <div class="price-tag">₹80</div>
+        </div>
+      </mat-card>
+    </div>
+
+    <!-- Night Menu Card -->
+    <div class="col-md-6 col-12">
+      <mat-card class="menu-card">
+        <div class="menu-header">
+          <mat-icon class="meal-icon">dark_mode</mat-icon>
+          <h5 class="menu-title">Night Menu</h5>
+         
+        </div>
+        <div class="menu-content">
+          <ul class="menu-list">
+            <li *ngFor="let nightMenu of myEveningMenuList">
+              <mat-icon class="food-icon">restaurant</mat-icon> {{ nightMenu }}
+            </li>
+          </ul>
+          <div class="price-tag">₹80</div>
+        </div>
+      
+      </mat-card>
+    </div>
+  </div>
+</div>

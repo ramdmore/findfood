@@ -1,0 +1,46 @@
+.feedback-card {
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+  }
+
+  .line {
+    border-bottom: 1px solid #110b0b;
+    margin-bottom: 16px;
+  }
+  
+  .filterTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  .filterTitle mat-icon {
+    cursor: pointer;
+  }
+  
+  .myFeedBackContainer {
+    padding: 20px;
+  }
+  
+  mat-card {
+    padding: 15px;
+  }
+  
+  .messImage {
+    width: 150px;
+    height: 150px;
+  }
+  
+  span i {
+    font-size: 22px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  .fa-star{
+    cursor: pointer;
+  }

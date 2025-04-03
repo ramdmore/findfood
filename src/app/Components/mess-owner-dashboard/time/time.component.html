@@ -1,0 +1,95 @@
+<div class="container">
+    <form [formGroup]="timeDetailsForm" (submit)="onSaveTimeDetails()">
+        <div class="card shadow-lg p-4 rounded">
+            <div formGroupName="timeDetails">
+                <!-- <h1 class="mb-4">Time</h1> -->
+                <h1 class="mb-3">Time ⏰</h1>
+                <!-- Morning Time -->
+                <h6 class="text-primary mb-3">☀️ Morning Time</h6>
+                <div formGroupName="morning">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Open</mat-label>
+                                <input matInput type="time" formControlName="from" />
+                                <mat-error
+                                    *ngIf="timeDetailsForm.get('timeDetails.morning.from')?.hasError('required')">
+                                    Morning start time is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Close</mat-label>
+                                <input matInput type="time" formControlName="to" />
+                                <mat-error *ngIf="timeDetailsForm.get('timeDetails.morning.to')?.hasError('required')">
+                                    Morning end time is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evening Time -->
+                <h6 class="text-primary my-3">🌙 Evening Time </h6>
+                <div formGroupName="evening">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Open</mat-label>
+                                <input matInput type="time" formControlName="from" />
+                                <mat-error
+                                    *ngIf="timeDetailsForm.get('timeDetails.evening.from')?.hasError('required')">
+                                    Evening start time is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Close</mat-label>
+                                <input matInput type="time" formControlName="to" />
+                                <mat-error *ngIf="timeDetailsForm.get('timeDetails.evening.to')?.hasError('required')">
+                                    Evening end time is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Holiday Selection -->
+                <h6 class="text-danger my-3">🏖️ Holiday</h6>
+                <div formGroupName="holiday">
+                    <div class="row">
+                        <div class="col-6">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Select holiday</mat-label>
+                                <mat-select formControlName="day">
+                                    <mat-option *ngFor="let day of daysOfWeek" [value]="day">
+                                        {{ day }}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="timeDetailsForm.get('timeDetails.holiday.day')?.hasError('required')">
+                                    Holiday day is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <!-- Holiday Period -->
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <mat-radio-group formControlName="period" class="d-flex flex-column gap-2">
+                                <mat-radio-button value="fullDay">Full day</mat-radio-button>
+                                <mat-radio-button value="onlyMorning">Only morning</mat-radio-button>
+                                <mat-radio-button value="onlyEvening">Only evening</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" mat-raised-button>Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
