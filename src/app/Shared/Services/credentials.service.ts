@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class CredentialsService {
 
   myUserRegisterApiUrl:string = 'https://findfood-ashen.vercel.app/api/user/register';
+  // myUserRegisterApiUrl:string = 'https://find-food-backend2.vercel.app/api/user/register';
   //userId,password,role
 
   myUserLoginApiUrl:string = 'https://findfood-ashen.vercel.app/api/user/login'; 

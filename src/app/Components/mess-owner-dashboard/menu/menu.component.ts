@@ -13,7 +13,6 @@ interface MenuItem {
   eveningMenu: string[];
 }
 
-
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -158,7 +157,6 @@ export class MenuComponent {
         }
       });
     } else {
-      // this.toastrServ.warning('Please select at least one item in each category');
     }
   }
 }

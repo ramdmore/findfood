@@ -10,8 +10,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrl: './feedback.component.css'
 })
 export class FeedbackComponent {
-  rating: number = 0;  // Stores the selected rating
-  tempRating: number = 0; // Temporary rating for hover effect
+  rating: number = 0;  
+  tempRating: number = 0; 
   starArray = [1, 2, 3, 4, 5];
   feedback: string = '';
   myCustomerUserId: any;
@@ -31,7 +31,6 @@ export class FeedbackComponent {
     console.log(this.myMessName);
     console.log(this.myOwnerUserId)
   }
-
 
   resetHover() {
     this.tempRating = this.rating; // Reset to stored rating

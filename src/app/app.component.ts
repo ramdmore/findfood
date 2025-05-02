@@ -22,6 +22,13 @@ export class AppComponent {
   }
 
  
+  // onSubmit(username: string, password: string, form: HTMLFormElement) {
+  //   console.log('Username:', username);
+  //   console.log('Password:', password);
+
+  //   // Clear the fields
+  //   form.reset();
+  // }
 
 }
 

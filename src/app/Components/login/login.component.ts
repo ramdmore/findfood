@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CredentialsService } from '../../Shared/Services/credentials.service';
 import { HttpClient } from '@angular/common/http';
@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit,AfterViewInit {
+export class LoginComponent implements OnInit,AfterViewInit,OnDestroy {
   loginForm!: FormGroup;
   captchaText: string = '';
 
@@ -140,5 +140,9 @@ export class LoginComponent implements OnInit,AfterViewInit {
         });
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    // alert("Login Destroyed");
   }
 }

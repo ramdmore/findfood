@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { LogoutConfirmDialogComponent } from '../logout-confirm-dialog/logout-confirm-dialog.component';
 import { MenuDetailsComponent } from '../menu-details/menu-details.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -7,13 +7,15 @@ import { CustomerService } from '../../Shared/Services/customer.service';
 import { FilterComponent } from '../filter/filter.component';
 import { MatPaginator } from '@angular/material/paginator';
 
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+
 @Component({
   selector: 'app-entry-point',
   standalone: false,
   templateUrl: './entry-point.component.html',
   styleUrl: './entry-point.component.css'
 })
-export class EntryPointComponent implements OnInit {
+export class EntryPointComponent implements OnInit,OnDestroy {
   MessDetailsForcustomer: {
     messDetails: any[], timeDetails: any[],
     rating: any[]
@@ -31,7 +33,7 @@ export class EntryPointComponent implements OnInit {
 
   locations:any[] = [];
 
-  constructor(private httpService: CustomerService, public dialog: MatDialog, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private httpService: CustomerService, public dialog: MatDialog, private router: Router, private activatedRoute: ActivatedRoute, private ngxLoader: NgxUiLoaderService) { }
 
   ngOnInit(): void {
     this.getMessDetailsForCustomer();
@@ -50,8 +52,10 @@ export class EntryPointComponent implements OnInit {
   }
 
   getMessDetailsForCustomer(): void {
+    this.ngxLoader.start();
     this.httpService.getMessDetailsForCustomer().subscribe({
       next: (response: any) => {
+        this.ngxLoader.stop();
         // console.log('Response:', response); // Check if ratings exist
         this.MessDetailsForcustomer = response as { messDetails: any[], timeDetails: any[], rating: any[] };
         this.FilterMessDetail = response.messDetails;
@@ -281,8 +285,7 @@ export class EntryPointComponent implements OnInit {
     console.log('Unique Locations:', this.locations);
   }
   
-  
-  
-
-
+  ngOnDestroy(): void {
+    // alert("destroyed")
+  }
 }
