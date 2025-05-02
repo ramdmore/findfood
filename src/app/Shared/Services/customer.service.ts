@@ -13,7 +13,7 @@ export class CustomerService {
       withCredentials:true,
     })
   }
-
+ 
   postFeedback(obj:any){
 
     return this.http.post(' https://findfood-ashen.vercel.app/api/user/saveRating',obj,{
@@ -32,10 +32,3 @@ export class CustomerService {
 
 }
 
-// https://findfood-ashen.vercel.app/api/user/saveRating
-// payLoad : {
-//                      customerUserId:"",
-//                      messUserId:"",
-//                      rating:"",
-//                      feedback:""
-//                    }
